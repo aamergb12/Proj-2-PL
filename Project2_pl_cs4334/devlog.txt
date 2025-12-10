@@ -1,0 +1,45 @@
+Project 2 Devlog
+CS4337 – Programming Language Paradigms
+Author: Aamer Goual-Belhamidi
+
+Sesh 1 – Maze Representation & Planning
+Reviewed the project specification and understood the maze format as a list of lists containing f, w, s, and e. Planned to implement a DFS-based backtracking solution using Prolog recursion. Decided to track visited cells to avoid infinite loops.
+
+
+Sesh 2 – Maze Validation & Start Detection
+Implemented valid_maze/1 to verify:
+- Maze is non-empty
+- Maze is rectangular
+- Exactly one start space exists
+- At least one exit exists
+
+Implemented find_start/3 using nth0 to locate the start coordinates.
+
+Sesh 3 – Movement Rules & Boundary Checks
+Implemented move/5 rules for:
+- left
+- right
+- up
+- down
+
+Created inside/3 predicate to prevent moving off the maze boundaries. Also added wall detection to block invalid movement.
+
+
+Sesh 4 – Recursive Solver
+Implemented solve/5 using depth-first search. The solver:
+- Succeeds immediately if current cell is an exit
+- Tries valid moves recursively
+- Prevents revisiting previous cells
+- Automatically generates the solution path when Actions is unbound
+
+
+Sesh 5 – Testing & Debugging
+Tested using example.pl and test.pl with randomly generated mazes using gen_map/4. Verified:
+- Correct path generation
+- Failure on invalid mazes
+- No wall collisions
+- No out-of-bounds movement
+- No infinite loops
+
+Final Notes
+This project helped reinforce Prolog recursion, backtracking, unification, and DFS search strategies. The solver correctly handles bound and unbound action lists and follows all project constraints.
